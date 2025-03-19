@@ -36,6 +36,7 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
+    // criando matriz para o tabuleiro
     int tabuleiro[10][10] = {
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0},
@@ -48,15 +49,24 @@ int main() {
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0}
     };
-
+    // letras do cabeçalho
     char letras[10] = {'A','B','C','D','E','F','G', 'H','I','J'};
+    // posicionando navios
+    for (int y = 3; y < 6; y++){
+        tabuleiro[y][3] = 3;
+        tabuleiro[1][y] = 3;
+    }
 
+    printf("Batalha Naval (nivel novato)\n");
+    printf("=============================================\n\n");
+    
+    // mostrar letras
     printf("\t");
     for (int a = 0; a < 10; a++){
         printf("%c\t", letras[a]);
     }
-    printf("\n");
-    
+    printf("\n\n");
+    // mostrar tabuleiro com os numeros na lateral
     for (int i = 0; i < 10; i++){
         printf("%d\t", i + 1);
         for (int j = 0; j < 10; j++){
